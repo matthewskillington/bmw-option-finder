@@ -5,8 +5,13 @@ const optionCodes = [
     {name: 'Folding rear seats', code: '465'}, 
     {name: 'Harman Kardon sound system', code: '688'}, 
     {name: 'Heated steering wheel', code: '248'}, 
+    {name: 'Sport brake calipers', code: '2NH'},
+    {name: '19 inch alloys', code: '2PF'},
+    {name: '5 Spoke 19 inch alloys', code: '21C'},
     {name: 'M Sport package', code: '337'}, 
+    {name: 'Shadow edition', code: '7B3'},
     {name: 'Lights package', code: '563'}, 
+    
 ]
 
 if(url.startsWith('https://bimmer.work/vin') && url.endsWith('options/')){
