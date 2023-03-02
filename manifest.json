@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Hello Extensions",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "bmwlogo.jpeg"
+    }, 
+    "permissions": [
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+          "js": ["siteeditor.js"],
+          "matches": [
+            "https://bimmer.work/*"
+          ]
+        }
+      ]
+  }
