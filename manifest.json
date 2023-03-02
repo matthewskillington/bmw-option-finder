@@ -1,11 +1,10 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "Bimmerwork option tracker",
+    "description": "Tracks options on bimmer.work so you dont have to",
     "version": "1.0",
     "action": {
-      "default_popup": "index.html",
-      "default_icon": "bmwlogo.jpeg"
+      "default_icon": "bmwlogo.png"
     }, 
     "permissions": [
         "tabs"
