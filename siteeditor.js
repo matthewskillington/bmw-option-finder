@@ -11,6 +11,9 @@ const optionCodes = [
     {name: 'M Sport package', code: '337'}, 
     {name: 'Shadow edition', code: '7B3'},
     {name: 'Lights package', code: '563'}, 
+    {name: '6wa (Extended) Instrument Cluster', code: '6WA'}, 
+    {name: '6wb (Digital) Instrument Cluster', code: '6WB'}, 
+    {name: 'Led Headlights', code: '5A2'}, 
     
 ]
 
