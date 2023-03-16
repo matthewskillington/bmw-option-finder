@@ -13,8 +13,10 @@
         {
           "js": ["siteeditor.js"],
           "matches": [
-            "https://bimmer.work/*"
-          ]
+            "https://bimmer.work/*",
+            "https://chipex.co.uk/*"
+          ],
+          "type": "module"
         }
       ]
   }
