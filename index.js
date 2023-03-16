@@ -23,7 +23,21 @@ const BIMMERWORK_LARGE_CONTAINER_CLASS = 'col-lg-12 container';
 const CHIPEX_CAR_LOOKUP_CLASS = '.car-lookup-info';
 const VIN_PREFIX = 'VIN=';
 const VIN_POSTFIX = '&type';
-const VIN_TEXT_PREFIX = 'VIN: ';
+
+const VIN_START_CHARS = 'WBA'
+
+const setBimmerWorkInputValueAsVin = async () => {
+    const clipboardValue = await navigator.clipboard.readText();
+
+    if(clipboardValue.startsWith(VIN_START_CHARS)){
+        const input = document.querySelector('input.form-control[name="vin"]')
+        input.value = clipboardValue;
+    }
+}
+
+if(url === 'https://bimmer.work/'){
+    setBimmerWorkInputValueAsVin();
+}
 
 if(url.startsWith('https://bimmer.work/vin') && url.endsWith('options/')){
 
@@ -62,7 +76,7 @@ if(url.startsWith('https://chipex.co.uk/pages/registration-lookup')){
 
     // Create the DOM elements
     const listItem = document.createElement('li');
-    listItem.innerText = `${VIN_TEXT_PREFIX}${vin}`;
+    listItem.innerText = `Copied ${vin} to clipboard`;
+    navigator.clipboard.writeText(vin);
     unorderedList.insertAdjacentElement('afterend', listItem);
-
 }
