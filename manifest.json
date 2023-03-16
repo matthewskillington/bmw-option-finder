@@ -11,12 +11,16 @@
     ],
     "content_scripts": [
         {
-          "js": ["index.js"],
+          "js": ["bweditor.js"],
           "matches": [
-            "https://bimmer.work/*",
+            "https://bimmer.work/*"
+          ]
+        },
+        {
+          "js": ["cpexeditor.js"],
+          "matches": [
             "https://chipex.co.uk/*"
-          ],
-          "type": "module"
+          ]
         }
       ]
   }
