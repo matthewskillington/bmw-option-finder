@@ -11,7 +11,7 @@
     ],
     "content_scripts": [
         {
-          "js": ["siteeditor.js"],
+          "js": ["index.js"],
           "matches": [
             "https://bimmer.work/*",
             "https://chipex.co.uk/*"

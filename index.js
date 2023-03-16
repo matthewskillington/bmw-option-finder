@@ -1,4 +1,5 @@
-let url = window.location.href;
+// Constants 
+const url = window.location.href;
 const optionCodes = [
     {name: 'Heated Seats', code: '494'}, 
     {name: 'Folding rear seats', code: '465'},
@@ -14,9 +15,15 @@ const optionCodes = [
     {name: 'Lights package', code: '563'}, 
     {name: '6wa (Extended) Instrument Cluster', code: '6WA'}, 
     {name: '6wb (Digital) Instrument Cluster', code: '6WB'}, 
-    
-    
 ]
+
+const BIMMERWORK_TOP_CONTAINER_CLASS = '.container-fluid'
+const BIMMERWORK_LARGE_CONTAINER_CLASS = 'col-lg-12 container';
+
+const CHIPEX_CAR_LOOKUP_CLASS = '.car-lookup-info';
+const VIN_PREFIX = 'VIN=';
+const VIN_POSTFIX = '&type';
+const VIN_TEXT_PREFIX = 'VIN: ';
 
 if(url.startsWith('https://bimmer.work/vin') && url.endsWith('options/')){
 
@@ -24,11 +31,11 @@ if(url.startsWith('https://bimmer.work/vin') && url.endsWith('options/')){
     const rowArray = Array.from(rows);
     const codes = rowArray.map(x => x.innerHTML);
 
-    const topContainer = document.querySelectorAll('.container-fluid')[0];
+    const topContainer = document.querySelector(BIMMERWORK_TOP_CONTAINER_CLASS);
 
     // Create the DOM elements
     const div = document.createElement('div');
-    div.classList = ['col-lg-12 container'];
+    div.classList = [BIMMERWORK_LARGE_CONTAINER_CLASS];
     optionCodes.map((x) => {
         const text = document.createElement("p");
         if(codes.includes(x.code)){
@@ -46,15 +53,16 @@ if(url.startsWith('https://bimmer.work/vin') && url.endsWith('options/')){
 
 if(url.startsWith('https://chipex.co.uk/pages/registration-lookup')){
 
-    const startIndexOfVin = url.indexOf('VIN=') + 4;
-    const endIndexOfVin = url.indexOf('&type');
+    const startIndexOfVin = url.indexOf(VIN_PREFIX) + 4;
+    const endIndexOfVin = url.indexOf(VIN_POSTFIX);
 
     const vin = url.substring(startIndexOfVin, endIndexOfVin);
 
-    const unorderedList = document.querySelector('.car-lookup-info');
+    const unorderedList = document.querySelector(CHIPEX_CAR_LOOKUP_CLASS);
 
     // Create the DOM elements
     const listItem = document.createElement('li');
-    listItem.innerText = `VIN: ${vin}`;
+    listItem.innerText = `${VIN_TEXT_PREFIX}${vin}`;
     unorderedList.insertAdjacentElement('afterend', listItem);
+
 }
